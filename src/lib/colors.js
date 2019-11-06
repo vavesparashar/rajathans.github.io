@@ -5,7 +5,7 @@ const colors = {
   red: '#E74C3C',
   blue: '#3366cc',
   green: '#29B573',
-  alligator: '#061526'
+  alligator: '#131415'
 }
 
 export default colors
