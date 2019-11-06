@@ -35,7 +35,7 @@ const Header = ({ siteTitle }) => {
             css={css`
               color: ${theme.colors.link};
               &:hover {
-                color: ${theme.colors.green};
+                color: ${theme.colors.link};
                 text-decoration: none;
               }
             `}

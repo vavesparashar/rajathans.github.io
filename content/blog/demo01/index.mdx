@@ -1,0 +1,103 @@
+---
+slug: dynamic-pwa-manifest-using-javascript-and-rest-api
+date: 2019-09-20
+title: 'Dynamic PWA manifest using Javascript and REST API'
+description: 'Read about how I turned a React PWA application to have customer specific customizations using dynamic manifests'
+published: true
+banner: './banner.png'
+---
+
+All businesses  registered on [StudioYou](https://getstudioyou.com) get their own webstore domain (eg. fitnessfirst.getstudioyou.com) where their customers can book classes, personal training, and buy memberships and packs. 
+
+We developed the webstore in React. For people who used it in mobile devices we wanted to take it a step further and give them a native app like experience. During my research, I came accross the word PWA (Progressive Web Apps). PWA is basically, as defined by Ionic,
+
+> A new way to offer incredible mobile app experiences that are highly optimized, reliable, and accessible completely on the web.
+
+They are websites that feel like apps you would find in an App Store but can be installed directly by visiting a webstite instead.
+
+For mobile app and PWA I had a few things in mind:
+
+* `native app like experience when opened on mobile` - Can be done using apt UI/UX
+* `different apps for different clients` - Each client should have their own PWA or app. This way we can give custom apps to our clients.
+* `push notifications support`
+* `should work offline` - Not required for our use case
+* `disable pull to refresh and text selection`  - Apps don't usually have this unlike mobile responsive websites
+
+
+Building a PWA is pretty straight forward if you are using React, as most of the work is already done. To work offline, your app needs a service worker. It’s already there if you’re using [Create React App](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app), or you can build your own with [PWA Builder](https://www.pwabuilder.com/).
+
+
+```jsx
+{
+  "short_name": "StudioYou",
+  "name": "StudioYou App",
+  "icons": [
+    {
+      "src": "/images/icons-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/icons-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "theme_color": "#3367D6",
+  "orientation": "portrait"
+}
+```
+
+### The problem
+
+Now, this is enough to build a PWA. But my use case was different, I needed different PWAs at different urls so that they render slightly different with custom colors and icons. In short, 
+> I needed dynamic manifest file instead of a single static manifest file which was present in the React code.
+
+### The solution
+
+So I found that the solution to this problem was to fetch the manifest from and API, which would change the values based on the subdomain.
+
+For example, the website served at fitnessfirst.getstudioyou.com will call an API with `fitnessfirst` in request body so that I get the appropriate JSON response and use that as manifest.
+
+But since, manifest.json is imported in the main index.html like
+
+```html
+<link rel="manifest" href="/manifest.json" >
+```
+
+I would need to write some logic in that html file to fetch the subdomain and call the API.
+
+```html
+<script>
+    var full = window.location.host; // subdomain.domain.com
+    var parts = full.split('.');
+    var sub = parts[0];
+
+    link = document.createElement('link');
+    link.href = 'https://src.getstudioyou.com/api/webstore/manifest/' + sub;
+    link.rel = 'manifest';
+
+    document.getElementsByTagName('head')[0].appendChild(link);
+</script>
+<link rel="manifest" href="/manifest.json" >
+```
+
+And now the correct manifest will be used based on the domain name in the URL.
+
+The icons in the manifest need to have the same base url as that of the manifest. So you can change the URI of icons to something like 
+`/api/webstore/manifest/{subdomain or some other unique attribute}/icons/44x44.png` in the manifest. Now when the manifest is fetched, the icons will be fetched from this URL, so I can change the icons to my client's logo.
+
+<!-- ### Final outcome -->
+
+<!-- ![PWA 1](https://raw.githubusercontent.com/rajathans/rajathans.github.io/master/static/img/_posts/pwa1.png  "Screenshot broadcast")
+
+![PWA 2](https://raw.githubusercontent.com/rajathans/rajathans.github.io/master/static/img/_posts/pwa2.png  "Screenshot broadcast") -->
+
+**References:**
+
+[https://developers.google.com/web/fundamentals/web-app-manifest/](https://developers.google.com/web/fundamentals/web-app-manifest/)
+[https://dev.to/uyouthe/pwa-checklist-2019-25j4](https://dev.to/uyouthe/pwa-checklist-2019-25j4)
+
