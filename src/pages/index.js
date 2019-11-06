@@ -15,7 +15,7 @@ const Hero = () => {
       css={css`
         color: ${theme.colors.white};
         width: 100%;
-        background: ${theme.colors.primary};
+        background: ${theme.colors.headerBg};
         padding: 20px 0 30px 0;
         display: flex;
       `}
@@ -28,15 +28,15 @@ const Hero = () => {
       >
         <h1
           css={css`
-            color: ${theme.colors.white};
+            color: ${theme.colors.text};
             position: relative;
             z-index: 5;
             line-height: 1.5;
             margin: 0;
-            max-width: ${rhythm(15)};
+            max-width: ${rhythm(25)};
           `}
         >
-          Your blog says the things you want to say.
+          A blog about Indie hacking and tech entrepreneurship
         </h1>
       </Container>
       <div

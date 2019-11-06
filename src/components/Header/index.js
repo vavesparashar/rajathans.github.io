@@ -33,9 +33,9 @@ const Header = ({ siteTitle }) => {
             to="/"
             aria-label="go to homepage"
             css={css`
-              color: white;
+              color: ${theme.colors.link};
               &:hover {
-                color: white;
+                color: ${theme.colors.green};
                 text-decoration: none;
               }
             `}
@@ -50,7 +50,7 @@ const Header = ({ siteTitle }) => {
               align-items: center;
               a {
                 text-decoration: none;
-                color: ${theme.colors.white};
+                color: ${theme.colors.text};
                 margin-left: 16px;
                 margin-right: 16px;
               }

@@ -9,7 +9,7 @@ const themes = {
       primary: colors.blue,
       text: colors.black,
       bodyBg: colors.gray,
-      headerBg: colors.blue,
+      headerBg: colors.gray,
       link: colors.blue,
       ...colors,
     },
@@ -19,7 +19,7 @@ const themes = {
     colors: {
       primary: lighten(0.05, colors.blue),
       text: colors.white,
-      bodyBg: colors.black,
+      bodyBg: colors.alligator,
       headerBg: colors.black,
       link: lighten(0.05, colors.blue),
       ...colors,
