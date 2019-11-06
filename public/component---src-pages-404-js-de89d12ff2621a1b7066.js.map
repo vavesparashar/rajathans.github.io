@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/404.js"],"names":[],"mappings":"2FAAA,iCAEe,4BACb,uBACE,mCACA","file":"component---src-pages-404-js-de89d12ff2621a1b7066.js","sourcesContent":["import React from 'react'\n\nexport default () => (\n  <div>\n    <h1>NOT FOUND</h1>\n    <p>You just hit a route that doesn't exist... the sadness.</p>\n  </div>\n)\n"],"sourceRoot":""}
