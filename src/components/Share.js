@@ -31,10 +31,10 @@ const Share = ({ url, title, twitterHandle }) => {
       <div
         css={css`
           flex-grow: 1;
-          border-top: 1px solid ${theme.colors.gray};
+          // border-top: 1px solid ${theme.colors.gray};
         `}
       />
-      <span>Share article</span>
+      {/* <span>Share article</span>
       <TwitterShareButton
         url={url}
         quote={title}
@@ -51,7 +51,7 @@ const Share = ({ url, title, twitterHandle }) => {
         `}
       >
         Facebook
-      </FacebookShareButton>
+      </FacebookShareButton> */}
     </div>
   )
 }

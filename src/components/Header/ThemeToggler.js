@@ -37,8 +37,8 @@ const ThemeToggler = ({ toggleTheme, themeName }) => {
         background: theme.colors.bodyBg,
         '@media (hover: hover)': {
           ':hover': {
-            background: `${theme.colors.blue}`,
-            color: theme.colors.green
+            background: `${theme.colors.text}`,
+            color: theme.colors.link
           },
         },
       }}
