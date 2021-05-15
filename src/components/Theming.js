@@ -4,17 +4,6 @@ import colors from '../lib/colors'
 
 const themes = {
   default: {
-    themeName: 'dark',
-    colors: {
-      primary: colors.blue,
-      text: colors.black,
-      bodyBg: colors.gray,
-      headerBg: colors.gray,
-      link: colors.blue,
-      ...colors,
-    },
-  },
-  dark: {
     themeName: 'default',
     colors: {
       primary: lighten(0.05, colors.blue),
@@ -22,6 +11,17 @@ const themes = {
       bodyBg: colors.alligator,
       headerBg: colors.black,
       link: lighten(0.05, colors.blue),
+      ...colors,
+    },
+  },
+  dark: {
+    themeName: 'dark',
+    colors: {
+      primary: colors.blue,
+      text: colors.black,
+      bodyBg: colors.gray,
+      headerBg: colors.gray,
+      link: colors.blue,
       ...colors,
     },
   },
