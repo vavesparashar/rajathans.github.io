@@ -4,7 +4,7 @@ import colors from '../lib/colors'
 
 const themes = {
   default: {
-    themeName: 'default',
+    themeName: 'dark',
     colors: {
       primary: colors.blue,
       text: colors.black,
@@ -15,7 +15,7 @@ const themes = {
     },
   },
   dark: {
-    themeName: 'dark',
+    themeName: 'default',
     colors: {
       primary: lighten(0.05, colors.blue),
       text: colors.white,

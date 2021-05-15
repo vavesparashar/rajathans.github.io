@@ -11,7 +11,7 @@ const DarkMode = styled(FiMoon)({
   margin: '0',
 })
 
-const DefaultMode = styled(FiMoon)({
+const DefaultMode = styled(FiSun)({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
