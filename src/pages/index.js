@@ -31,12 +31,12 @@ const Hero = () => {
             color: ${theme.colors.text};
             position: relative;
             z-index: 5;
-            line-height: 1.5;
+            line-height: 2;
             margin: 0;
             max-width: ${rhythm(25)};
           `}
         >
-          Collection of highest thoughts to meditate upon
+          Collection of highest thoughts
         </h1>
       </Container>
       <div

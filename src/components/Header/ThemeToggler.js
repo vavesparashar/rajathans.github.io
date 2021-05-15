@@ -4,14 +4,14 @@ import styled from '@emotion/styled'
 import { FiMoon, FiSun } from 'react-icons/fi'
 import { useTheme } from '../Theming'
 
-const DarkMode = styled(FiMoon)({
+const DarkMode = styled(FiSun)({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   margin: '0',
 })
 
-const DefaultMode = styled(FiSun)({
+const DefaultMode = styled(FiMoon)({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
