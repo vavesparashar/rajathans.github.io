@@ -36,7 +36,7 @@ const Hero = () => {
             max-width: ${rhythm(25)};
           `}
         >
-          A blog about Indie hacking and tech entrepreneurship
+          Collection of highest thoughts to meditate upon
         </h1>
       </Container>
       <div

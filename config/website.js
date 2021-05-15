@@ -23,7 +23,7 @@ module.exports = {
   // Social component
   twitter: 'https://twitter.com/whiteseer/',
   twitterHandle: '@whiteseer',
-  github: 'https://github.com/rajathans/',
+  github: '',
   linkedin: 'https://linkedin.com/c/whiteseer/',
   instagram: 'https://instagram.com/whiteseer/'
 }
