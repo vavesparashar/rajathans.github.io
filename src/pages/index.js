@@ -31,7 +31,7 @@ const Hero = () => {
             color: ${theme.colors.text};
             position: relative;
             z-index: 5;
-            line-height: 2;
+            line-height: 1.3;
             margin: 0;
             max-width: ${rhythm(25)};
           `}
@@ -101,7 +101,7 @@ export default function Index({ data: { site, allMdx } }) {
         <Link to="/blog" aria-label="Visit blog page">
           View all articles
         </Link>
-        <br/>
+        <br />
       </Container>
     </Layout>
   )

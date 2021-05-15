@@ -2,8 +2,8 @@ import Typography from 'typography'
 import '../fonts/fonts.css'
 
 export const fonts = {
-  regular: 'Inter UI Regular',
-  regularItalic: 'Inter UI Regular Italic',
+  regular: 'Inter UI',
+  regularItalic: 'Inter UI Italic',
   semibold: 'Inter UI Semibold',
   semiboldItalic: 'Inter UI Semibold Italic',
   bold: 'Inter UI Bold',
